@@ -1,0 +1,181 @@
+{
+  "info": {
+    "name": "Ticket File Upload API",
+    "description": "API for creating tickets with file attachments",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Ticket with Files",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_JWT_TOKEN_HERE",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "title",
+              "value": "Test Ticket with Attachments",
+              "type": "text"
+            },
+            {
+              "key": "priority",
+              "value": "high",
+              "type": "text"
+            },
+            {
+              "key": "hash",
+              "value": "unique-hash-{{$randomUUID}}",
+              "type": "text"
+            },
+            {
+              "key": "application_id",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "body",
+              "value": "This is a test ticket created with file attachments via API",
+              "type": "text"
+            },
+            {
+              "key": "status",
+              "value": "open",
+              "type": "text"
+            },
+            {
+              "key": "customer_id",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "files",
+              "type": "file",
+              "src": []
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/tickets/with-files",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tickets",
+            "with-files"
+          ]
+        },
+        "description": "Creates a new ticket with file attachments uploaded to S3"
+      },
+      "response": []
+    },
+    {
+      "name": "Create Regular Ticket (No Files)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_JWT_TOKEN_HERE",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Regular Ticket\",\n  \"priority\": \"medium\",\n  \"hash\": \"unique-hash-{{$randomUUID}}\",\n  \"application_id\": 1,\n  \"body\": \"This is a regular ticket without file attachments\",\n  \"status\": \"open\",\n  \"customer_id\": 1\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/v1/tickets",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1", 
+            "tickets"
+          ]
+        },
+        "description": "Creates a regular ticket without file attachments"
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Tickets",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer YOUR_JWT_TOKEN_HERE",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/v1/tickets",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tickets"
+          ]
+        },
+        "description": "Retrieves all tickets"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Enriched Tickets",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization", 
+            "value": "Bearer YOUR_JWT_TOKEN_HERE",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{base_url}}/api/v1/tickets/enriched",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tickets", 
+            "enriched"
+          ]
+        },
+        "description": "Retrieves all tickets with enriched data"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}

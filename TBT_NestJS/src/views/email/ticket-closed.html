@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ticket Closed</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f4f6f9;font-family:Arial,Helvetica,sans-serif;">
+
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f6f9;padding:32px 0;">
+    <tr>
+      <td align="center">
+
+        <!-- Card -->
+        <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+
+          <!-- Header bar -->
+          <tr>
+            <td style="background-color:#16a34a;padding:28px 36px;">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td>
+                    <p style="margin:0;font-size:13px;color:#bbf7d0;letter-spacing:1px;text-transform:uppercase;">Text Based Ticketing</p>
+                    <h1 style="margin:6px 0 0;font-size:22px;color:#ffffff;font-weight:700;">Ticket Resolved</h1>
+                  </td>
+                  <td align="right" style="vertical-align:top;">
+                    <!-- Checkmark badge -->
+                    <span style="display:inline-block;width:40px;height:40px;background-color:#15803d;border-radius:50%;text-align:center;line-height:40px;font-size:20px;color:#ffffff;">&#10003;</span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Status banner -->
+          <tr>
+            <td style="background-color:#f0fdf4;border-bottom:1px solid #d1fae5;padding:14px 36px;">
+              <table cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="padding-right:10px;">
+                    <span style="display:inline-block;width:8px;height:8px;background-color:#16a34a;border-radius:50%;"></span>
+                  </td>
+                  <td style="font-size:14px;color:#15803d;font-weight:600;">
+                    This ticket has been marked as <strong>Closed</strong> and is now resolved.
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="padding:32px 36px;">
+
+              <!-- Details table -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;font-size:14px;">
+
+                <tr style="background-color:#f9fafb;">
+                  <td style="padding:11px 16px;color:#6b7280;width:140px;font-weight:600;border-bottom:1px solid #e5e7eb;">Ticket ID</td>
+                  <td style="padding:11px 16px;color:#111827;font-weight:700;border-bottom:1px solid #e5e7eb;">#{{ticketId}}</td>
+                </tr>
+
+                <tr>
+                  <td style="padding:11px 16px;color:#6b7280;font-weight:600;border-bottom:1px solid #e5e7eb;">Title</td>
+                  <td style="padding:11px 16px;color:#111827;border-bottom:1px solid #e5e7eb;">{{title}}</td>
+                </tr>
+
+                <tr style="background-color:#f9fafb;">
+                  <td style="padding:11px 16px;color:#6b7280;font-weight:600;border-bottom:1px solid #e5e7eb;">Priority</td>
+                  <td style="padding:11px 16px;border-bottom:1px solid #e5e7eb;">
+                    <span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:700;background-color:{{priorityBg}};color:{{priorityColor}};">
+                      {{priority}}
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding:11px 16px;color:#6b7280;font-weight:600;border-bottom:1px solid #e5e7eb;">Customer</td>
+                  <td style="padding:11px 16px;color:#111827;border-bottom:1px solid #e5e7eb;">{{customerName}}</td>
+                </tr>
+
+                <tr style="background-color:#f9fafb;">
+                  <td style="padding:11px 16px;color:#6b7280;font-weight:600;border-bottom:1px solid #e5e7eb;">Assigned To</td>
+                  <td style="padding:11px 16px;color:#111827;border-bottom:1px solid #e5e7eb;">{{agentName}}</td>
+                </tr>
+
+                <tr>
+                  <td style="padding:11px 16px;color:#6b7280;font-weight:600;">Closed At</td>
+                  <td style="padding:11px 16px;color:#111827;">{{closedAt}}</td>
+                </tr>
+
+              </table>
+
+              <!-- CTA button -->
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:28px;">
+                <tr>
+                  <td>
+                    <a href="{{viewUrl}}" style="display:inline-block;background-color:#16a34a;color:#ffffff;text-decoration:none;font-size:14px;font-weight:700;padding:12px 28px;border-radius:6px;letter-spacing:0.3px;">
+                      View Ticket →
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background-color:#f9fafb;border-top:1px solid #e5e7eb;padding:20px 36px;">
+              <p style="margin:0;font-size:12px;color:#9ca3af;line-height:1.6;">
+                This is an automated notification from <strong style="color:#6b7280;">TBT – Text Based Ticketing</strong>.<br>
+                Please do not reply directly to this email.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /Card -->
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

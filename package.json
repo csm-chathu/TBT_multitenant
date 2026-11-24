@@ -1,0 +1,19 @@
+{
+  "name": "tbt-multitenant-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "TBT_ReactJS",
+    "TBT_NestJS"
+  ],
+  "scripts": {
+    "dev:frontend": "npm --workspace TBT_ReactJS run dev",
+    "dev:backend": "npm --workspace TBT_NestJS run start:dev",
+    "build:frontend": "npm --workspace TBT_ReactJS run build",
+    "build:backend": "npm --workspace TBT_NestJS run build",
+    "test:backend": "npm --workspace TBT_NestJS run test",
+    "lint:frontend": "npm --workspace TBT_ReactJS run lint",
+    "lint:backend": "npm --workspace TBT_NestJS run lint",
+    "workspaces:list": "npm query .workspace"
+  }
+}

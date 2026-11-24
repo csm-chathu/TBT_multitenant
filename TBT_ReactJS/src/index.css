@@ -1,0 +1,379 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-optical-sizing: auto;
+}
+
+@layer base {
+  :root {
+    /* Primary */
+    --color-primary-600: #2563eb;
+    --color-primary-500: #3b82f6;
+    --color-primary-400: #60a5fa;
+    --color-primary-100: #dbeafe;
+    /* Secondary */
+    --color-secondary-600: #020617;
+    --color-secondary-500: #0f172a;
+    --color-secondary-400: #1e293b;
+    --color-secondary-100: #334155;
+    /* Surface */
+    --color-surface-primary: #ffffff;
+    --color-surface-secondary: #f1f5f9;
+    --color-surface-tertiary: #e2e8f0;
+    --color-surface-quaternary: #cbd5e1;
+    /* Text */
+    --color-text-base: #020617;
+    --color-text-muted: #62748e;
+    --color-text-inverted: #ffffff;
+    /* Border */
+    --color-border-primary: #0f172a;
+    --color-border-secondary: #dbeafe;
+    /* Base */
+    --color-black: #020617;
+    --color-white: #ffffff;
+    /* Success */
+    --color-success-600: #16a34a;
+    --color-success-500: #22c55e;
+    --color-success-400: #4ade80;
+    --color-success-100: #e0ffe1;
+    /* Warning */
+    --color-warning-600: #e9a522;
+    --color-warning-500: #ffc961;
+    --color-warning-400: #ffda92;
+    --color-warning-100: #fff3e0;
+    /* Danger */
+    --color-danger-600: #ed533a;
+    --color-danger-500: #ff7761;
+    --color-danger-400: #ff8e7c;
+    --color-danger-100: #ffdfe2;
+    /* Info */
+    --color-info-600: #2563eb;
+    --color-info-500: #3b82f6;
+    --color-info-400: #60a5fa;
+    --color-info-100: #dbeafe;
+  }
+
+  :root[class="dark"] {
+    /* Primary */
+    --color-primary-600: #3b82f6;
+    --color-primary-500: #3b82f6;
+    --color-primary-400: #1e478a;
+    --color-primary-100: #172e54;
+    /* Secondary */
+    --color-secondary-600: #ffffff;
+    --color-secondary-500: #f1f5f9;
+    --color-secondary-400: #e2e8f0;
+    --color-secondary-100: #cbd5e1;
+    /* Surface */
+    --color-surface-primary: #0f172a;
+    --color-surface-secondary: #020617;
+    --color-surface-tertiary: #1e293b;
+    --color-surface-quaternary: #334155;
+    /* Text */
+    --color-text-base: #ffffff;
+    --color-text-muted: #7d8b9e;
+    --color-text-inverted: #020617;
+    /* Border */
+    --color-border-primary: #dbeafe;
+    --color-border-secondary: #1e293b;
+    /* Success */
+    --color-success-600: #E0FFE1;
+    --color-success-500: #4ADE80;
+    --color-success-400: #005620;
+    --color-success-100: #003513;
+    /* Warning */
+    --color-warning-600: #F2AC3F;
+    --color-warning-500: #CE982E;
+    --color-warning-400: #896216;
+    --color-warning-100: #4B350B;
+    /* Danger */
+    --color-danger-600: #FF6070;
+    --color-danger-500: #60170C;
+    --color-danger-400: #6E1E10;
+    --color-danger-100: #47120A;
+    /* Info */
+    --color-info-600: #4A97FF;
+    --color-info-500: #60A5FA;
+    --color-info-400: #60A5FA;
+    --color-info-100: #051D51;
+  }
+
+  html {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  section {
+    @apply max-w-screen-xl mx-auto px-5 xl:px-0 py-14 lg:pt-20;
+  }
+
+  body {
+    @apply bg-surface-secondary text-textColor-base accent-primary-500 overflow-x-hidden;
+  }
+}
+
+/* Ensure react-toastify container does not affect document flow or add unexpected spacing */
+.Toastify {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: auto !important;
+  left: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: none;
+}
+
+.Toastify__toast {
+  pointer-events: auto;
+}
+
+@layer components {
+  td {
+    @apply py-3 text-sm text-left px-2 truncate;
+  }
+
+  /* Phone Input Styles */
+  .phone-input-wrapper {
+    @apply w-full flex items-center gap-2;
+  }
+
+  .phone-input-wrapper .PhoneInput {
+    @apply flex items-center gap-2 w-full;
+  }
+
+  .phone-input-wrapper .PhoneInputInput {
+    @apply flex-1;
+  }
+
+  .phone-input-wrapper .PhoneInputCountry {
+    @apply mr-2;
+  }
+
+  .phone-input-wrapper .PhoneInputCountryIcon {
+    @apply w-6 h-6 rounded;
+  }
+
+  .phone-input-wrapper .PhoneInputCountrySelect {
+    @apply px-2 py-1 border border-borderColor-secondary rounded-lg bg-surface-secondary cursor-pointer;
+  }
+
+  .phone-input-error .PhoneInputInput {
+    @apply border-red-500;
+  }
+
+  .phone-input-error .PhoneInputInput:focus {
+    @apply ring-red-500;
+  }
+}
+
+@layer utilities {
+  .chip {
+    @apply h-6 text-sm px-2 font-medium font-mono whitespace-nowrap text-info-600 inline-flex items-center rounded 2xl:rounded-md bg-info-100;
+  }
+
+  .status-chip {
+    @apply h-6 text-sm px-2 font-medium inline-flex items-center rounded bg-surface-secondary text-textColor-muted whitespace-nowrap;
+  }
+
+  .status-open {
+    background: var(--color-primary-400);
+    color: var(--color-secondary-600);
+  }
+
+  .status-assigned {
+    background: var(--color-primary-400);
+    color: var(--color-secondary-600);
+  }
+
+  .status-in-progress {
+    background: var(--color-warning-400);
+    color: var(--color-secondary-600);
+  }
+
+  .status-resolved {
+    background: var(--color-success-400);
+    color: var(--color-secondary-600);
+  }
+
+  .status-closed {
+    background: var(--color-danger-400);
+    color: var(--color-secondary-600);
+  }
+
+  .status-on-hold {
+    background: var(--color-warning-600);
+    color: var(--color-secondary-600);
+  }
+
+  .status-pending {
+    background: var(--color-primary-100);
+    color: var(--color-secondary-600);
+  }
+
+  .priority-chip {
+    @apply h-5 text-[14px] 2xl:text-sm px-1 2xl:px-2 font-medium 2xl:font-medium inline-flex items-center gap-x-1 rounded-md before:h-1.5 before:w-1.5 before:block before:rounded-full;
+  }
+
+  .priority-low {
+    @apply bg-success-100 text-success-600 before:bg-success-500;
+  }
+
+  .priority-medium {
+    @apply bg-info-100 text-info-600 before:bg-info-500;
+  }
+
+  .priority-high {
+    @apply bg-warning-100 text-warning-600 before:bg-warning-500;
+  }
+
+  .priority-critical {
+    @apply bg-danger-100 text-danger-600 before:bg-danger-600;
+  }
+
+  /* Aging badges */
+  .aging-chip {
+    @apply h-6 text-sm px-2 font-medium inline-flex items-center rounded bg-surface-secondary text-textColor-muted;
+  }
+
+  .aging-0-5 {
+    @apply bg-success-500 text-white;
+  }
+
+  .aging-6-10 {
+    @apply bg-warning-500 text-white;
+  }
+
+  .aging-11-20 {
+    @apply bg-orange-500 text-white;
+  }
+
+  .aging-21-30 {
+    @apply bg-danger-500 text-white;
+  }
+
+  .aging-gt-30 {
+    @apply bg-purple-700 text-white;
+  }
+
+  .aging-na {
+    @apply bg-surface-secondary text-textColor-muted;
+  }
+
+  .aging-dash {
+    @apply bg-slate-500 text-white;
+  }
+
+  .tooltip {
+    @apply relative before:content-[attr(data-tip)] before:absolute before:px-3 before:py-1 before:left-1/2 before:-top-0 before:w-max before:max-w-xs before:-translate-x-1/2 before:-translate-y-full before:bg-slate-800 before:text-white before:text-xs before:font-medium before:rounded-md before:opacity-0 before:transition-all after:absolute after:left-1/2 after:-top-0 after:h-0 after:w-0 after:-translate-x-1/2 after:border-4 after:border-t-slate-800 after:border-l-transparent after:border-b-transparent after:border-r-transparent after:opacity-0 after:transition-all hover:before:opacity-100 hover:after:opacity-100;
+  }
+
+  /* Hide scrollbar for Chrome, Safari, Edge, Firefox */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Markdown Preview Theme Fixes */
+html:not(.dark) .wmde-markdown,
+[data-color-mode="light"] .wmde-markdown {
+  --color-fg-default: #020617 !important;
+  color: #020617 !important;
+  background-color: transparent !important;
+}
+
+html:not(.dark) .wmde-markdown p,
+html:not(.dark) .wmde-markdown h1,
+html:not(.dark) .wmde-markdown h2,
+html:not(.dark) .wmde-markdown h3,
+html:not(.dark) .wmde-markdown h4,
+html:not(.dark) .wmde-markdown h5,
+html:not(.dark) .wmde-markdown h6,
+html:not(.dark) .wmde-markdown li,
+html:not(.dark) .wmde-markdown span,
+html:not(.dark) .wmde-markdown strong,
+html:not(.dark) .wmde-markdown table,
+html:not(.dark) .wmde-markdown td,
+html:not(.dark) .wmde-markdown th,
+[data-color-mode="light"] .wmde-markdown p,
+[data-color-mode="light"] .wmde-markdown h1,
+[data-color-mode="light"] .wmde-markdown h2,
+[data-color-mode="light"] .wmde-markdown h3,
+[data-color-mode="light"] .wmde-markdown h4,
+[data-color-mode="light"] .wmde-markdown h5,
+[data-color-mode="light"] .wmde-markdown h6,
+[data-color-mode="light"] .wmde-markdown li,
+[data-color-mode="light"] .wmde-markdown span,
+[data-color-mode="light"] .wmde-markdown strong,
+[data-color-mode="light"] .wmde-markdown table,
+[data-color-mode="light"] .wmde-markdown td,
+[data-color-mode="light"] .wmde-markdown th {
+  color: #020617 !important;
+}
+
+html.dark .wmde-markdown,
+[data-color-mode="dark"] .wmde-markdown {
+  --color-fg-default: #ffffff !important;
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+html.dark .wmde-markdown p,
+html.dark .wmde-markdown h1,
+html.dark .wmde-markdown h2,
+html.dark .wmde-markdown h3,
+html.dark .wmde-markdown h4,
+html.dark .wmde-markdown h5,
+html.dark .wmde-markdown h6,
+html.dark .wmde-markdown li,
+html.dark .wmde-markdown span,
+html.dark .wmde-markdown strong,
+html.dark .wmde-markdown table,
+html.dark .wmde-markdown td,
+html.dark .wmde-markdown th,
+[data-color-mode="dark"] .wmde-markdown p,
+[data-color-mode="dark"] .wmde-markdown h1,
+[data-color-mode="dark"] .wmde-markdown h2,
+[data-color-mode="dark"] .wmde-markdown h3,
+[data-color-mode="dark"] .wmde-markdown h4,
+[data-color-mode="dark"] .wmde-markdown h5,
+[data-color-mode="dark"] .wmde-markdown h6,
+[data-color-mode="dark"] .wmde-markdown li,
+[data-color-mode="dark"] .wmde-markdown span,
+[data-color-mode="dark"] .wmde-markdown strong,
+[data-color-mode="dark"] .wmde-markdown table,
+[data-color-mode="dark"] .wmde-markdown td,
+[data-color-mode="dark"] .wmde-markdown th {
+  color: #ffffff !important;
+}
+
+
+
+.editor-shell .codex-editor__redactor { padding-bottom: 80px !important; }
+.editor-shell .ce-block__content, .editor-shell .ce-toolbar__content { max-width: none; }
+.editor-shell .ce-paragraph { font-size: 1.05rem; line-height: 1.8; color: var(--color-text-base); }
+.editor-shell .ce-header { font-weight: 600; font-size:1.3rem;  }
+.editor-shell .ce-toolbar__plus, .editor-shell .ce-toolbar__settings-btn { color: var(--color-text-muted); }
+.editor-shell .ce-toolbar__plus:hover, .editor-shell .ce-toolbar__settings-btn:hover { background: var(--color-primary-100); }
+.editor-shell .ce-inline-toolbar { border-color: var(--border-borderColor-primary); background: var(--primary-500); box-shadow: 0 10px 30px rgb(62 47 30 / 0.08); }
+.editor-shell .ce-popover { border-color: var(--border-borderColor-secondary); background: var(--surface-secondary); }
+.editor-shell .ce-popover__item:hover { background: var(--primary-100); }
+.editor-shell .cdx-block { padding-left: 0; padding-right: 0; }

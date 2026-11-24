@@ -1,0 +1,3902 @@
+{
+	"info": {
+		"_postman_id": "e82ba9fb-a418-4b44-98f6-ed4c5d76176c",
+		"name": "TBT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33240687"
+	},
+	"item": [
+		{
+			"name": "Ticket Status (SMS)",
+			"item": [
+				{
+					"name": "Update Ticket Status to Closed (SMS)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"Closed\"\n}"
+						},
+						"url": {
+							"raw": "{{tbt_url}}/tickets/:id",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"tickets",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ticket Status to Resolved (SMS)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"Resolved\"\n}"
+						},
+						"url": {
+							"raw": "{{tbt_url}}/tickets/:id",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"tickets",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message",
+			"item": [
+				{
+					"name": "receive_sms",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "account_sid",
+									"value": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+									"type": "text"
+								},
+								{
+									"key": "api_version",
+									"value": "2010-04-01",
+									"type": "text"
+								},
+								{
+									"key": "Body",
+									"value": "Test Ticket",
+									"type": "text"
+								},
+								{
+									"key": "date_created",
+									"value": "Thu, 30 Jul 2015 20:12:31 +0000",
+									"type": "text"
+								},
+								{
+									"key": "date_sent",
+									"value": "Thu, 30 Jul 2015 20:12:33 +0000",
+									"type": "text"
+								},
+								{
+									"key": "date_updated",
+									"value": "Thu, 30 Jul 2015 20:12:33 +0000",
+									"type": "text"
+								},
+								{
+									"key": "direction",
+									"value": "inbound-api",
+									"type": "text"
+								},
+								{
+									"key": "error_code",
+									"value": "null",
+									"type": "text"
+								},
+								{
+									"key": "error_message",
+									"value": "null",
+									"type": "text"
+								},
+								{
+									"key": "From",
+									"value": "+16267366373",
+									"type": "text"
+								},
+								{
+									"key": "messaging_service_sid",
+									"value": "null",
+									"type": "text"
+								},
+								{
+									"key": "num_media",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "num_segments",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "null",
+									"type": "text"
+								},
+								{
+									"key": "price_unit",
+									"value": "null",
+									"type": "text"
+								},
+								{
+									"key": "sid",
+									"value": "SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "sent",
+									"type": "text"
+								},
+								{
+									"key": "subresource_uris",
+									"value": "{media:\"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Media.json\"}",
+									"type": "text"
+								},
+								{
+									"key": "To",
+									"value": "+16262098347",
+									"type": "text"
+								},
+								{
+									"key": "uri",
+									"value": " \"/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/SMXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.json",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/sms/receive",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"sms",
+								"receive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "receive_mms",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ToCountry",
+									"value": "US",
+									"type": "text"
+								},
+								{
+									"key": "MediaContentType0",
+									"value": "image/jpeg",
+									"type": "text"
+								},
+								{
+									"key": "ToState",
+									"value": "CA",
+									"type": "text"
+								},
+								{
+									"key": "SmsMessageSid",
+									"value": "MM2d52b9c4f22ee6aec93ce2e52a163b84",
+									"type": "text"
+								},
+								{
+									"key": "NumMedia",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "ToCity",
+									"value": "WEST COVINA",
+									"type": "text"
+								},
+								{
+									"key": "FromZip",
+									"value": "91722",
+									"type": "text"
+								},
+								{
+									"key": "SmsSid",
+									"value": "MM2d52b9c4f22ee6aec93ce2e52a163b84",
+									"type": "text"
+								},
+								{
+									"key": "FromState",
+									"value": "CA",
+									"type": "text"
+								},
+								{
+									"key": "SmsStatus",
+									"value": "received",
+									"type": "text"
+								},
+								{
+									"key": "FromCity",
+									"value": "WEST COVINA",
+									"type": "text"
+								},
+								{
+									"key": "Body",
+									"value": "Test MMS in SMS Production",
+									"type": "text"
+								},
+								{
+									"key": "FromCountry",
+									"value": "US",
+									"type": "text"
+								},
+								{
+									"key": "To",
+									"value": "+16262098347",
+									"type": "text"
+								},
+								{
+									"key": "MessagingServiceSid",
+									"value": "MG37be5cba217566bdab70d5118e653b28",
+									"type": "text"
+								},
+								{
+									"key": "ToZip",
+									"value": "91722",
+									"type": "text"
+								},
+								{
+									"key": "NumSegments",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "MessageSid",
+									"value": "MM2d52b9c4f22ee6aec93ce2e52a163b84",
+									"type": "text"
+								},
+								{
+									"key": "AccountSid",
+									"value": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+									"type": "text"
+								},
+								{
+									"key": "From",
+									"value": "+16267366373",
+									"type": "text"
+								},
+								{
+									"key": "MediaUrl0",
+									"value": "https://api.twilio.com/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/MM2d52b9c4f22ee6aec93ce2e52a163b84/Media/ME1fff6884d700461ca05d5ef81ae347c1",
+									"type": "text"
+								},
+								{
+									"key": "ApiVersion",
+									"value": "2010-04-01",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/sms/receive",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"sms",
+								"receive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "receive_mms 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "MediaContentType1",
+									"value": "image/jpeg",
+									"type": "text"
+								},
+								{
+									"key": "ToCountry",
+									"value": "US",
+									"type": "text"
+								},
+								{
+									"key": "MediaContentType0",
+									"value": "image/jpeg",
+									"type": "text"
+								},
+								{
+									"key": "ToState",
+									"value": "CA",
+									"type": "text"
+								},
+								{
+									"key": "SmsMessageSid",
+									"value": "MM79228abd1dfe6a21001cf86891bd81cf",
+									"type": "text"
+								},
+								{
+									"key": "NumMedia",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "MediaUrl2",
+									"value": "https://api.twilio.com/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/MM79228abd1dfe6a21001cf86891bd81cf/Media/ME7e017609cad231e259d1efd349cd398b",
+									"type": "text"
+								},
+								{
+									"key": "ToCity",
+									"value": "WEST COVINA",
+									"type": "text"
+								},
+								{
+									"key": "FromZip",
+									"value": "91722",
+									"type": "text"
+								},
+								{
+									"key": "SmsSid",
+									"value": "MM79228abd1dfe6a21001cf86891bd81cf",
+									"type": "text"
+								},
+								{
+									"key": "FromState",
+									"value": "CA",
+									"type": "text"
+								},
+								{
+									"key": "SmsStatus",
+									"value": "received",
+									"type": "text"
+								},
+								{
+									"key": "FromCity",
+									"value": "WEST COVINA",
+									"type": "text"
+								},
+								{
+									"key": "Body",
+									"value": "Test MMS Ticket @1009",
+									"type": "text"
+								},
+								{
+									"key": "FromCountry",
+									"value": "US",
+									"type": "text"
+								},
+								{
+									"key": "To",
+									"value": "+16262098347",
+									"type": "text"
+								},
+								{
+									"key": "MessagingServiceSid",
+									"value": "MG37be5cba217566bdab70d5118e653b28",
+									"type": "text"
+								},
+								{
+									"key": "MediaUrl1",
+									"value": "https://api.twilio.com/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/MM79228abd1dfe6a21001cf86891bd81cf/Media/ME86fc20613f678c6c796615d8cd321d38",
+									"type": "text"
+								},
+								{
+									"key": "ToZip",
+									"value": "91722",
+									"type": "text"
+								},
+								{
+									"key": "NumSegments",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "MessageSid",
+									"value": "MM79228abd1dfe6a21001cf86891bd81cf",
+									"type": "text"
+								},
+								{
+									"key": "AccountSid",
+									"value": "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+									"type": "text"
+								},
+								{
+									"key": "MediaContentType2",
+									"value": "image/jpeg",
+									"type": "text"
+								},
+								{
+									"key": "From",
+									"value": "+16267366373",
+									"type": "text"
+								},
+								{
+									"key": "MediaUrl0",
+									"value": "https://api.twilio.com/2010-04-01/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Messages/MM79228abd1dfe6a21001cf86891bd81cf/Media/ME03cabd4009969fb383d34bfb3b8baacc",
+									"type": "text"
+								},
+								{
+									"key": "ApiVersion",
+									"value": "2010-04-01",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/sms/receive",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"sms",
+								"receive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send_sms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tbt_url}}/message/send/hello/119",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"message",
+								"send",
+								"hello",
+								"119"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/message/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"message",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/messages",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"messages"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Shashika",
+									"type": "text"
+								},
+								{
+									"key": "middle_name",
+									"value": "Pradeep",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Mahindapala",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "user_type",
+									"value": "customer",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "1984-01-16",
+									"type": "text"
+								},
+								{
+									"key": "mobile_number",
+									"value": "718043596",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "112913496",
+									"type": "text"
+								},
+								{
+									"key": "building_no",
+									"value": "292/6",
+									"type": "text"
+								},
+								{
+									"key": "street_name",
+									"value": "Gemunu Mw",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Kiribathgoda",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "Western",
+									"type": "text"
+								},
+								{
+									"key": "country_id",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "postal_code",
+									"value": "11600",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "No. 292/6, Gemunu Mw, Kiribathgoda",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "4.8372626",
+									"type": "text"
+								},
+								{
+									"key": "lng",
+									"value": "45.3636366",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/customer",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/customer/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/customers",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{tbt_url}}/customer/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test5@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Shashika",
+									"type": "text"
+								},
+								{
+									"key": "middle_name",
+									"value": "Pradeep",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Mahindapala",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "user_type",
+									"value": "patient",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "1984-01-16",
+									"type": "text"
+								},
+								{
+									"key": "mobile_country_code",
+									"value": "+94",
+									"type": "text"
+								},
+								{
+									"key": "mobile_number",
+									"value": "718043596",
+									"type": "text"
+								},
+								{
+									"key": "phone_country_code",
+									"value": "+94",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "112913496",
+									"type": "text"
+								},
+								{
+									"key": "building_no",
+									"value": "292/6",
+									"type": "text"
+								},
+								{
+									"key": "street_name",
+									"value": "Gemunu Mw",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Kiribathgoda",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "Western",
+									"type": "text"
+								},
+								{
+									"key": "country_id",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "postal_code",
+									"value": "11600",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "No. 292/6, Gemunu Mw, Kiribathgoda",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "4.8372626",
+									"type": "text"
+								},
+								{
+									"key": "lng",
+									"value": "45.3636366",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/customer/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Ticket",
+			"item": [
+				{
+					"name": "Comment",
+					"item": [
+						{
+							"name": "Add Comment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "message",
+											"value": "One of our agents will contact you soon.",
+											"type": "text"
+										},
+										{
+											"key": "application_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "file[]",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "agent_to_customer",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tbt_url}}/ticket/comment/1",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"ticket",
+										"comment",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Comment",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "message",
+											"value": "Site is not working",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "application_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "file[]",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tbt_url}}/ticket/comment/edit/1/1",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"ticket",
+										"comment",
+										"edit",
+										"1",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Comment",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "message",
+											"value": "Site is not working",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "application_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "file[]",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tbt_url}}/ticket/comment/1/1",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"ticket",
+										"comment",
+										"1",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Comment",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "message",
+											"value": "Site is not working 4",
+											"type": "text"
+										},
+										{
+											"key": "application_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "agent_to_customer",
+											"type": "text"
+										},
+										{
+											"key": "to",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "tbt.elifeamerica.com/ticket/comment/update/5/2",
+									"host": [
+										"tbt",
+										"elifeamerica",
+										"com"
+									],
+									"path": [
+										"ticket",
+										"comment",
+										"update",
+										"5",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Comment",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "message",
+											"value": "Site is not working",
+											"type": "text"
+										},
+										{
+											"key": "application_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "file[]",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "http://tbt.elifeamerica.com/ticket/comment/1/1",
+									"protocol": "http",
+									"host": [
+										"tbt",
+										"elifeamerica",
+										"com"
+									],
+									"path": [
+										"ticket",
+										"comment",
+										"1",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{tbt_url}}/ticket/comments/1",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"ticket",
+										"comments",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "History",
+					"item": [
+						{
+							"name": "Store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "type",
+											"value": "comment",
+											"description": "['ticket', 'comment']",
+											"type": "text"
+										},
+										{
+											"key": "action",
+											"value": "added",
+											"description": "['viewed', 'added', 'deleted', 'updated']",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tbt_url}}/ticket/history/1",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"ticket",
+										"history",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get History",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "body",
+											"value": "I changed the ticket message",
+											"type": "text"
+										},
+										{
+											"key": "init_message",
+											"value": "0",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "\"in-progress\"",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tbt_url}}/ticket/history/4",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"ticket",
+										"history",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "body",
+									"value": "A new Ticket 2",
+									"type": "text"
+								},
+								{
+									"key": "application_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "customer_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "agent_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "in-progress",
+									"type": "text"
+								},
+								{
+									"key": "remarks",
+									"value": "Test",
+									"type": "text"
+								},
+								{
+									"key": "data",
+									"value": "{\"range\":1}",
+									"type": "text"
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": [
+										"/Users/admin/Downloads/94882397_120186799660019_3471113180451700736_n.jpg",
+										"/Users/admin/Downloads/264840629_466089824878469_4588937602541858261_n.jpg"
+									],
+									"disabled": true
+								},
+								{
+									"key": "priority",
+									"value": "normal",
+									"type": "text"
+								},
+								{
+									"key": "customer_phone_number",
+									"value": "+94718043596",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/api/v1/ticket",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ticket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "body",
+									"value": "I changed the ticket message",
+									"type": "text"
+								},
+								{
+									"key": "init_message",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "\"in-progress\"",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/ticket/1001",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"ticket",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Suggestion",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "body",
+									"value": "I changed the ticket message",
+									"type": "text"
+								},
+								{
+									"key": "init_message",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "\"in-progress\"",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/ticket/1001",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"ticket",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Stats",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "body",
+									"value": "I changed the ticket message",
+									"type": "text"
+								},
+								{
+									"key": "init_message",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "\"in-progress\"",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/ticket/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"ticket",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "body",
+									"value": "I changed the ticket message",
+									"type": "text"
+								},
+								{
+									"key": "init_message",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "\"in-progress\"",
+									"type": "text"
+								},
+								{
+									"key": "from",
+									"value": "2022-03-24",
+									"type": "text"
+								},
+								{
+									"key": "to",
+									"value": "2022-03-24",
+									"type": "text"
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/tickets",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{tbt_url}}/ticket/edit/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"ticket",
+								"edit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "body",
+									"value": "Ticket message has been updated 23",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "closed",
+									"type": "text"
+								},
+								{
+									"key": "init_message",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "priority",
+									"value": "high",
+									"type": "text"
+								},
+								{
+									"key": "remarks",
+									"value": "ticket has been updated",
+									"type": "text"
+								},
+								{
+									"key": "agent_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "data",
+									"value": "{}",
+									"type": "text"
+								},
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/api/v1/ticket/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ticket",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/ticket/assign/1/2",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"ticket",
+								"assign",
+								"1",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{tbt_url}}/ticket/create",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"ticket",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Organizations",
+			"item": [
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Xyz",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "org50@mdidev.com",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "hash",
+									"value": "123",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234556",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/organization",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"organization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/organization/5",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"organization",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/organizations",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"organizations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/organization/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"organization",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Abc Dea",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "112913496",
+									"type": "text"
+								},
+								{
+									"key": "address_line1",
+									"value": "292/6",
+									"type": "text"
+								},
+								{
+									"key": "address_line2",
+									"value": "Gemunu Mw",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Kiribathgoda",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "Western",
+									"type": "text"
+								},
+								{
+									"key": "country_id",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "postal_code",
+									"value": "11600",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "4.8372626",
+									"type": "text"
+								},
+								{
+									"key": "lng",
+									"value": "45.3636366",
+									"type": "text"
+								},
+								{
+									"key": "parent_organization_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/organization/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"organization",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Application",
+			"item": [
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Team 1",
+									"type": "text"
+								},
+								{
+									"key": "service_email",
+									"value": "test2@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "service_phone_number",
+									"value": "12345678890",
+									"type": "text"
+								},
+								{
+									"key": "organization_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/application",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"application"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/application/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"application",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/applications",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"applications"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/application/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"application",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Team 1",
+									"type": "text"
+								},
+								{
+									"key": "application_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "12345678890",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/application/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"application",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Team",
+			"item": [
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Team 1",
+									"type": "text"
+								},
+								{
+									"key": "application_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "12345678890",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/team",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"team"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/team/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"team",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImthbGluZHV5YXBhQGdtYWlsLmNvbSIsInN1YiI6MSwiaWF0IjoxNzU1Njc2NDgyLCJleHAiOjE3NTU2NzczODJ9.MWt8GvWIs6tQCwLQKN4Hekzu4YZDIfCQo2CEEFQD02w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/teams",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"teams"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/team/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"team",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Team 1",
+									"type": "text"
+								},
+								{
+									"key": "application_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "12345678890",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/team/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"team",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{tbt_url}}/teams/2",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"teams",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agent",
+			"item": [
+				{
+					"name": "Store",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test5@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Shashika",
+									"type": "text"
+								},
+								{
+									"key": "middle_name",
+									"value": "Pradeep",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Mahindapala",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "user_type",
+									"value": "customer",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "1984-01-16",
+									"type": "text"
+								},
+								{
+									"key": "mobile_country_code",
+									"value": "+94",
+									"type": "text"
+								},
+								{
+									"key": "mobile_number",
+									"value": "718043596",
+									"type": "text"
+								},
+								{
+									"key": "phone_country_code",
+									"value": "+94",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "112913496",
+									"type": "text"
+								},
+								{
+									"key": "building_no",
+									"value": "292/6",
+									"type": "text"
+								},
+								{
+									"key": "street_name",
+									"value": "Gemunu Mw",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Kiribathgoda",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "Western",
+									"type": "text"
+								},
+								{
+									"key": "country_id",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "postal_code",
+									"value": "11600",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "No. 292/6, Gemunu Mw, Kiribathgoda",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "4.8372626",
+									"type": "text"
+								},
+								{
+									"key": "lng",
+									"value": "45.3636366",
+									"type": "text"
+								},
+								{
+									"key": "nickname",
+									"value": "csm",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/agent",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"agent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/agent/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"agent",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/agents",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"agents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/agent/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"agent",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test5@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "Shashika",
+									"type": "text"
+								},
+								{
+									"key": "middle_name",
+									"value": "Pradeep",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Mahindapala",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "user_type",
+									"value": "customer",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "confirm_password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "1984-01-16",
+									"type": "text"
+								},
+								{
+									"key": "mobile_country_code",
+									"value": "+94",
+									"type": "text"
+								},
+								{
+									"key": "mobile_number",
+									"value": "718043596",
+									"type": "text"
+								},
+								{
+									"key": "phone_country_code",
+									"value": "+94",
+									"type": "text"
+								},
+								{
+									"key": "phone_number",
+									"value": "112913496",
+									"type": "text"
+								},
+								{
+									"key": "building_no",
+									"value": "292/6",
+									"type": "text"
+								},
+								{
+									"key": "street_name",
+									"value": "Gemunu Mw",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "Kiribathgoda",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "Western",
+									"type": "text"
+								},
+								{
+									"key": "country_id",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "postal_code",
+									"value": "11600",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "No. 292/6, Gemunu Mw, Kiribathgoda",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "4.8372626",
+									"type": "text"
+								},
+								{
+									"key": "lng",
+									"value": "45.3636366",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/agent/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"agent",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{tbt_url}}/agents/1",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"agents",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "One Check PUSHER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tbt_url}}/test/one",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"test",
+								"one"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "User Registration",
+					"item": [
+						{
+							"name": "1. Create User Registration",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{tbt_url}}/signup",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Store User Registration",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email_address",
+											"value": "jashashika@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "first_name",
+											"value": "Shashika",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "Pradeep",
+											"type": "text"
+										},
+										{
+											"key": "mobile_number",
+											"value": "+94718043596",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tbt_url}}/signup",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Store Verify Phone number",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{tbt_url}}/register",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4. Verify Email Address",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{tbt_url}}/register",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Forget Password",
+					"item": [
+						{
+							"name": "1. Add email or phone number",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2. Submit email or phone number",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3. Passowrd Reset Link",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "4. Submit new password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"token\",JSON.parse(responseBody).token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "emailAddress",
+									"value": "shashika@mdidev.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Abc12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{tbt_url}}/api/v1/auth/login",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tbt_url}}/logout",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logged In User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/api/v1/auth/user",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stats",
+			"item": [
+				{
+					"name": "Update Ticket Stats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "{{tbt_url}}/stats/update/ticket",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"stats",
+								"update",
+								"ticket"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Ticket Stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{tbt_url}}/stats/ticket",
+							"host": [
+								"{{tbt_url}}"
+							],
+							"path": [
+								"stats",
+								"ticket"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "Location",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{tbt_url}}/inventory/location/create",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"location",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "colombo_test3433",
+											"type": "text"
+										},
+										{
+											"key": "label",
+											"value": "Colombo Test3433",
+											"type": "text"
+										},
+										{
+											"key": "country_id",
+											"value": " 1",
+											"type": "text"
+										},
+										{
+											"key": "data",
+											"value": "{}",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Test Description",
+											"type": "text"
+										},
+										{
+											"key": "remarks",
+											"value": "Test Remarks",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tbt_url}}/inventory/location",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"location"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{tbt_url}}/inventory/location/edit/1",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"location",
+										"edit",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "colombo",
+											"type": "text"
+										},
+										{
+											"key": "label",
+											"value": "Colombo",
+											"type": "text"
+										},
+										{
+											"key": "country_id",
+											"value": " 1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tbt_url}}/inventory/location/1",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"location",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get One",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{tbt_url}}/inventory/location/1",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"location",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{tbt_url}}/inventory/locations",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"locations"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Category X\",\r\n  \"label\": \"Category Label X\",\r\n  \"description\": \"This is a description for Category X.\",\r\n  \"remarks\": \"No remarks for Category X.\",\r\n  \"hash\": \"unique-hash-12345\",\r\n  \"data\": \"Additional data for Category X\",\r\n  \"createdAt\": 1625276345000,\r\n  \"updatedAt\": 1625276345000\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{tbt_url}}/inventory/categories",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "colombo",
+											"type": "text"
+										},
+										{
+											"key": "label",
+											"value": "Colombo",
+											"type": "text"
+										},
+										{
+											"key": "country_id",
+											"value": " 1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tbt_url}}/inventory/category",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{tbt_url}}/inventory/category/edit/1",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"category",
+										"edit",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "colombo",
+											"type": "text"
+										},
+										{
+											"key": "label",
+											"value": "Colombo",
+											"type": "text"
+										},
+										{
+											"key": "country_id",
+											"value": " 1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tbt_url}}/inventory/category/1",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"category",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get One",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{tbt_url}}/inventory/location/1",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"location",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{tbt_url}}/inventory/categories",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Item",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{tbt_url}}/inventory/item/create",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"item",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Store",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "colombo",
+											"type": "text"
+										},
+										{
+											"key": "label",
+											"value": "Colombo",
+											"type": "text"
+										},
+										{
+											"key": "country_id",
+											"value": " 1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tbt_url}}/inventory/item",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"item"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Edit",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{tbt_url}}/inventory/item/edit/1",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"item",
+										"edit",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "colombo",
+											"type": "text"
+										},
+										{
+											"key": "label",
+											"value": "Colombo",
+											"type": "text"
+										},
+										{
+											"key": "country_id",
+											"value": " 1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tbt_url}}/inventory/item/1",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"item",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get One",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{tbt_url}}/inventory/item/1",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"item",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{tbt_url}}/inventory/items",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"items"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "CSV Upload",
+					"item": [
+						{
+							"name": "Store Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "inventory_file",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "{{tbt_url}}/inventory/csv/upload",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"csv",
+										"upload"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Brand",
+					"item": [
+						{
+							"name": "Get All",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"url": {
+									"raw": "{{tbt_url}}/inventory/categories",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "token",
+										"value": "{{token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Category X\",\r\n  \"label\": \"Category Label X\",\r\n  \"description\": \"This is a description for Category X.\",\r\n  \"remarks\": \"No remarks for Category X.\",\r\n  \"hash\": \"unique-hash-12345\",\r\n  \"data\": \"Additional data for Category X\",\r\n  \"createdAt\": 1625276345000,\r\n  \"updatedAt\": 1625276345000\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{tbt_url}}/inventory/categories",
+									"host": [
+										"{{tbt_url}}"
+									],
+									"path": [
+										"inventory",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{tbt_url}}/",
+					"host": [
+						"{{tbt_url}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "tbt_url",
+			"value": "http://localhost:1337"
+		}
+	]
+}

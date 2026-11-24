@@ -1,0 +1,146 @@
+{
+  "name": "tbt-backend",
+  "version": "0.0.1",
+  "description": "",
+  "author": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "nest build",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "seed": "ts-node src/seeders/database.seeder.ts",
+    "seed:prod": "ts-node dist/seeders/database.seeder.js",
+    "seed:dev": "ts-node -r tsconfig-paths/register src/seeders/database.seeder.ts",
+    "seed:ktmg": "ts-node src/seeders/ktmg-seeder.ts",
+    "seed:ktmg:prod": "ts-node dist/seeders/ktmg-seeder.js",
+    "seed:ktmg:dev": "ts-node -r tsconfig-paths/register src/seeders/ktmg-seeder.ts",
+    "seed:tracker-agents": "ts-node -r tsconfig-paths/register src/scripts/seed-ticket-tracker-agents.ts",
+    "test:db": "ts-node src/scripts/test-db-connection.ts",
+    "migrate": "ts-node -r tsconfig-paths/register src/scripts/run-migrate.ts",
+    "migrate:down": "ts-node -r tsconfig-paths/register src/scripts/run-migrate.ts --down",
+    "db:add-fks": "ts-node -r tsconfig-paths/register src/scripts/add-fk-constraints.ts",
+    "db:add-action-types": "ts-node -r tsconfig-paths/register src/scripts/add-action-types-schema.ts",
+    "db:create-queue-table": "ts-node -r tsconfig-paths/register src/scripts/create-ticket-update-queue-table.ts",
+    "db:migrate-queue-live": "ts-node -r tsconfig-paths/register src/scripts/migrate-ticket-update-queue-live.ts",
+    "db:add-customer-tag": "ts-node -r tsconfig-paths/register src/scripts/add-customer-tag-column.ts",
+    "db:create-notes-table": "ts-node -r tsconfig-paths/register src/scripts/create-notes-table.ts",
+    "generate:openapi": "curl http://localhost:3000/api-docs-json -o openapi.json",
+    "openapi:generate": "openapi-generator-cli generate -i openapi.json -g typescript-axios -o ./src/api-client"
+  },
+  "dependencies": {
+    "@aws-sdk/client-lambda": "^3.964.0",
+    "@aws-sdk/client-s3": "^3.891.0",
+    "@aws-sdk/lib-storage": "^3.891.0",
+    "@aws-sdk/s3-request-presigner": "^3.922.0",
+    "@nestjs/common": "^11.0.1",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/core": "^11.0.1",
+    "@nestjs/jwt": "^11.0.0",
+    "@nestjs/mapped-types": "^2.1.0",
+    "@nestjs/passport": "^11.0.5",
+    "@nestjs/platform-express": "^11.0.1",
+    "@nestjs/swagger": "^11.2.3",
+    "@types/multer": "^2.0.0",
+    "bcrypt": "^6.0.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.2",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^16.6.1",
+    "form-data": "^4.0.6",
+    "mailgun-js": "^0.22.0",
+    "mailgun.js": "^13.3.0",
+    "multer": "^2.0.2",
+    "mysql2": "^3.14.1",
+    "passport": "^0.7.0",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "pusher": "^5.2.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "sequelize": "^6.37.7",
+    "twilio": "^5.3.4",
+    "umzug": "^3.8.3",
+    "winston": "^3.19.0",
+    "winston-cloudwatch": "^6.3.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.18.0",
+    "@nestjs/cli": "^11.0.0",
+    "@nestjs/schematics": "^11.0.0",
+    "@nestjs/testing": "^11.0.1",
+    "@openapitools/openapi-generator-cli": "^2.25.2",
+    "@swc/cli": "^0.6.0",
+    "@swc/core": "^1.10.7",
+    "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.7",
+    "@types/supertest": "^6.0.2",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.2",
+    "globals": "^16.0.0",
+    "jest": "^29.7.0",
+    "jest-html-reporters": "^3.1.5",
+    "prettier": "^3.4.2",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.5",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.20.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": ".",
+    "moduleNameMapper": {
+      "^src/(.*)$": "<rootDir>/src/$1"
+    },
+    "reporters": [
+      "default",
+      [
+        "jest-html-reporters",
+        {
+          "publicPath": "./test-report",
+          "filename": "jest-unit-report.html",
+          "expand": true,
+          "pageTitle": "TBT Backend Unit Tests"
+        }
+      ]
+    ],
+    "testMatch": [
+      "<rootDir>/test/**/*.spec.ts",
+      "<rootDir>/src/**/*.spec.ts"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      ".*\\.e2e-spec\\.ts$"
+    ],
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "src/**/*.(t|j)s"
+    ],
+    "coverageDirectory": "<rootDir>/coverage",
+    "testEnvironment": "node"
+  }
+}

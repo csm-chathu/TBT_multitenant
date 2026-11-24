@@ -1,0 +1,80 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "*.{js,ts,jsx,tsx,mdx}",
+    "app/**/*.{ts,tsx}",
+    "components/**/*.{ts,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary:{
+          600: 'var(--color-primary-600)',
+          500: 'var(--color-primary-500)',
+          400: 'var(--color-primary-400)',
+          100: 'var(--color-primary-100)'
+        },
+        secondary:{
+          600: 'var(--color-secondary-600)',
+          500: 'var(--color-secondary-500)',
+          400: 'var(--color-secondary-400)',
+          100: 'var(--color-secondary-100)',
+        },
+        success:{
+          600: 'var(--color-success-600)',
+          500: 'var(--color-success-500)',
+          400: 'var(--color-success-400)',
+          100: 'var(--color-success-100)'
+        },
+        warning:{
+          600: 'var(--color-warning-600)',
+          500: 'var(--color-warning-500)',
+          400: 'var(--color-warning-400)',
+          100: 'var(--color-warning-100)'
+        },
+        danger:{
+          600: 'var(--color-danger-600)',
+          500: 'var(--color-danger-500)',
+          400: 'var(--color-danger-400)',
+          100: 'var(--color-danger-100)'
+        },
+        info:{
+          600: 'var(--color-info-600)',
+          500: 'var(--color-info-500)',
+          400: 'var(--color-info-400)',
+          100: 'var(--color-info-100)',
+        },
+        surface:{
+          primary: 'var(--color-surface-primary)',
+          secondary: 'var(--color-surface-secondary)',
+          tertiary: 'var(--color-surface-tertiary)',
+          quaternary: 'var(--color-surface-quaternary)'
+        },
+        textColor: {
+          base: 'var(--color-text-base)',
+          muted: 'var(--color-text-muted)',
+          inverted: 'var(--color-text-inverted)'
+        },
+        borderColor:{
+          primary: 'var(--color-border-primary)',
+          secondary: 'var(--color-border-secondary)'
+        },
+        base:{
+          black: 'var(--color-black)',
+          white: 'var(--color-white)',
+        }
+      },
+      
+      fontFamily: {
+        sans: ["DM Sans", "sans-serif"],
+      },
+      screens: {
+        "2xl": "1600px",
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+}
